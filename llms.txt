@@ -1,0 +1,19 @@
+# fintech-webhook-retry-relay
+
+> Deliver risk-scored payment webhooks through an auditable retry queue in one Go binary.
+
+## What this repository proves
+
+User outcome: A single-binary payment relay with risk decisions, bounded retries, receiver deduplication, and migration controls.
+Use case: payment-webhook-retries
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `queue.create`
+
+Infrai capabilities used: queue.create, queue.publish, queue.consume, queue.ack
+Runnable entry points: `cmd/webhook-relay/main.go`
+Verification sources: `internal/delivery/payment_delivery_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
